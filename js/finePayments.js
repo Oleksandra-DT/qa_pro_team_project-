@@ -34,5 +34,11 @@ alert "Номер не співпадає" або "Сума не співпад�
  */
 buttonSubmit.addEventListener('click',payFine);
 function payFine(){
-
+    const fineObj = DB.find(fine => fineNumber.value === fine.номер)
+    if(!fineObj) {
+        alert('Номер не співпадає')
+    }
+    if(fineObj.сума !== amount.value) {
+        alert('Сума не співпадає')
+    }
 }

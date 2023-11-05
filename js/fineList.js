@@ -19,7 +19,7 @@ function searchFines(searchKey){
      - Їзда у не тверезому стані
      */
 
-
+     return DB.filter(fine => fine.номер === searchKey || fine.тип === searchKey);
     return [
         {номер: '001', тип: 'Перевищення швидкості', сума: 100, дата: '2023-01-15'}
     ];
