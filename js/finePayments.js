@@ -35,7 +35,7 @@
 buttonSubmit.addEventListener('click',payFine);
 function payFine() {
  //Звертаючись до властивості finesData ви отримуєте всі дані з файлу data.js
-     const fineObj = DB.find(fine => fineNumber.value === fine.номер)
+     const fineObj = data.finesData.find(fine => fineNumber.value === fine.номер)
  if (!fineNumber.value || !passport.value || !creditCardNumber.value || !cvv.value || !amount.value) {
   alert("Будь ласка, заповніть всі поля");
   return false;
@@ -55,7 +55,7 @@ function payFine() {
   alert("Не вірний cvv");
   return false;
  }
- if(fineObj.сума !== amount.value) {
+ if(fineObj['сума'] !== parseInt(amount.value)) {
      alert('Сума не співпадає')
     }
  else {
