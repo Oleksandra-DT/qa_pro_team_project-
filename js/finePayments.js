@@ -69,7 +69,7 @@ function payFine() {
  }
 }
  function isValidPassport(passport) {
-  let re = /^[А-Я]{2}[0-9]{6}$/;
+  let re = /^[А-ЯЄІЇҐ]{2}[0-9]{6}$/;
   return re.test(String(passport))
  }
 
